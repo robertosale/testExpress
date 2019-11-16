@@ -32,8 +32,8 @@ app.listen(3000,()=>{
 app.get('/request',(req,res)=> {
     var result;
     
-    mysqlConnection.query(`SELECT nombre, anio FROM Pelicula
-                        WHERE LOWER(nombre) LIKE \'%${req.query.peli.toLowerCase()}%\'`,(err,result,fields)=>{
+    mysqlConnection.query(`SELECT * FROM vistaTotal
+                        WHERE LOWER(Pelicula) LIKE \'%${req.query.peli.toLowerCase()}%\'`,(err,result,fields)=>{
         
         res.send(result);
         console.log(result);

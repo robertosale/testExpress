@@ -1,5 +1,5 @@
 function cargarPeliculas(){
-    
+    document.getElementById('resultados').innerHTML = "";
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = ()=>{
         if(xhttp.readyState == 4 && xhttp.status ==200){
@@ -9,7 +9,8 @@ function cargarPeliculas(){
                 let row = jackson[key];
                 console.log(row.nombre);
 
-                document.getElementById('resultados').innerHTML += `<h1> ${row.nombre}     ${row.anio} </h1>`;
+                document.getElementById('resultados').innerHTML += `<h2> ${row.Pelicula} - ${row.anio}
+                 - ${row.nombreActor} ${row.apellidoActor} - "${row.papel}"</h2>`;
                
             });
 
